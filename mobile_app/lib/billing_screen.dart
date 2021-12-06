@@ -6,21 +6,21 @@ import 'total_balance.dart';
 import 'transfer_money_screen.dart';
 
 TextEditingController enterAccountNumber = new TextEditingController();
+TextEditingController enterAccountName = new TextEditingController();
 TextEditingController enterbillAmount = new TextEditingController();
 int billAmount = 0;
 String sbillAmount = "bill";
-/* String payWhat = "Pay Bills";
-String merchantNames = "Merchant Title"; */
 
 class BillingScreen extends StatelessWidget {
-  BillingScreen({Key? key}) : super(key: key);
+  String merchant;
+  BillingScreen(this.merchant, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text(MerchantScreenState().payWhat), //update this title
+          child: Text("Pay Bills"), //update this title
         ),
         backgroundColor: Colors.red,
         leading: Builder(
@@ -137,7 +137,7 @@ class BillingScreen extends StatelessWidget {
               Container(
                 width: double.infinity,
                 child: Text(
-                  MerchantScreenState().merchant,
+                  merchant,
                   style: TextStyle(
                     height: 3,
                     fontSize: 30,
@@ -196,7 +196,7 @@ class BillingScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(bottom: 20),
                 child: TextField(
-                  // controller: enterAmount,
+                  controller: enterAccountName,
                   inputFormatters: [
                     new WhitelistingTextInputFormatter(RegExp("[a-zA-Z]")),
                   ],
@@ -272,6 +272,9 @@ class BillingScreen extends StatelessWidget {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40)))),
                         onPressed: () {
+                          enterAccountNumber.clear();
+                          enterAccountName.clear();
+                          enterbillAmount.clear();
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -303,10 +306,16 @@ class BillingScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(40)))),
                         onPressed: () {
                           sbillAmount = enterbillAmount.text;
-                          if (enterAccountNumber.text.length < 12) {
+                          if (enterAccountNumber.text.length < 12 ||
+                              enterAccountNumber.text != "201812210910") {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                content:
-                                    Text('Oops.. Invalid Account Number')));
+                                content: Text(
+                                    'Oops.. Your Account Number is Incorrect')));
+                          } else if (enterAccountName.text.length == 0 ||
+                              enterAccountName.text != "VillaflorYap") {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                                    'Oops.. Your Account Name is Incorrect')));
                           } else if (enterbillAmount.text.length > 0) {
                             /* transferAmount =
                                 int.parse(SavingsAccount().sbillAmount); */
@@ -316,7 +325,7 @@ class BillingScreen extends StatelessWidget {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                 content: Text(
                                     'Oops.. Minimum Transfer Amount is PHP 200.')));
-                          } else if (transferAmount > totalBalance) {
+                          } else if (billAmount > totalBalance) {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                 content: Text('Oops.. Insufficient Balance')));
                           } else {
@@ -412,6 +421,33 @@ class PaymentSuccess extends StatelessWidget {
                               SavingsAccount().accountType +
                               ', # ' +
                               SavingsAccount().accountNumber,
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(1.0),
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.check_circle_rounded,
+                    color: Colors.green[700],
+                    size: 30.0,
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
+                  RichText(
+                    text: TextSpan(
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'Account Name: ' + SavingsAccount().accountName,
                           style: TextStyle(
                             color: Colors.black.withOpacity(1.0),
                             fontSize: 15,
@@ -554,6 +590,7 @@ class PaymentSuccess extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(40)))),
                       onPressed: () {
                         enterAccountNumber.clear();
+                        enterAccountName.clear();
                         enterbillAmount.clear();
                         billAmount = 0;
                         Navigator.push(

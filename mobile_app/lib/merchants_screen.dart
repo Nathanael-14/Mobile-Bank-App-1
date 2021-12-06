@@ -11,8 +11,6 @@ class MerchantScreen extends StatefulWidget {
 }
 
 class MerchantScreenState extends State<MerchantScreen> {
-  String payWhat = "paywhat";
-  String merchant = "merchant";
   List<List> merchantName = [
     [
       'Adendimun',
@@ -173,8 +171,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][0];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][0]);
                 },
                 title: Text(merchantName[widget.value][0]),
               ),
@@ -182,8 +179,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][1];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][1]);
                 },
                 title: Text(merchantName[widget.value][1]),
               ),
@@ -191,8 +187,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][2];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][2]);
                 },
                 title: Text(merchantName[widget.value][2]),
               ),
@@ -200,8 +195,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][3];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][3]);
                 },
                 title: Text(merchantName[widget.value][3]),
               ),
@@ -209,8 +203,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][4];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][4]);
                 },
                 title: Text(merchantName[widget.value][4]),
               ),
@@ -218,8 +211,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][5];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][5]);
                 },
                 title: Text(merchantName[widget.value][5]),
               ),
@@ -227,8 +219,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][6];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][6]);
                 },
                 title: Text(merchantName[widget.value][6]),
               ),
@@ -236,8 +227,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][7];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][7]);
                 },
                 title: Text(merchantName[widget.value][7]),
               ),
@@ -245,8 +235,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][8];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][8]);
                 },
                 title: Text(merchantName[widget.value][8]),
               ),
@@ -254,8 +243,7 @@ class MerchantScreenState extends State<MerchantScreen> {
             Card(
               child: ListTile(
                 onTap: () {
-                  merchant = merchantName[widget.value][9];
-                  GoToBilling(context);
+                  GoToPayment(context, merchantName[widget.value][9]);
                 },
                 title: Text(merchantName[widget.value][9]),
               ),
@@ -267,12 +255,7 @@ class MerchantScreenState extends State<MerchantScreen> {
   }
 }
 
-void GoToPayment(BuildContext context) {
-  Navigator.push(
-      context, MaterialPageRoute(builder: (context) => DashboardScreen()));
-}
-
-void GoToBilling(BuildContext context) {
-  Navigator.push(
-      context, MaterialPageRoute(builder: (context) => BillingScreen()));
+void GoToPayment(BuildContext context, String merchant) {
+  Navigator.push(context,
+      MaterialPageRoute(builder: (context) => BillingScreen(merchant)));
 }

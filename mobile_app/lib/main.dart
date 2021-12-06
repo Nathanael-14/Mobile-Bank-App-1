@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         canvasColor: Colors.white,
       ),
-      home: DashboardScreen(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

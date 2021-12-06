@@ -5,7 +5,7 @@ class SavingsAccount {
   String accountType = 'Savings Account';
   String accountNumber = '201812210910';
   String targetAccountNumber = enterAccountNumber.text;
-
+  String accountName = "VillaflorYap";
   calculateCurrentBalance() {
     totalBalance = totalBalance - transferAmount;
     print(totalBalance);

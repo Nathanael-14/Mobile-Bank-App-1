@@ -87,7 +87,7 @@ class DashboardScreen extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text('Card Name',
+                      Text(SavingsAccount().accountName,
                           style:
                               TextStyle(color: Colors.white.withOpacity(0.5))),
                       Text('Master Card',
@@ -169,7 +169,6 @@ class DashboardScreen extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         setValue(0, context);
-                        MerchantScreenState().payWhat = "Pay Electricity";
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -187,7 +186,6 @@ class DashboardScreen extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         setValue(1, context);
-                        MerchantScreenState().payWhat = "Pay Water";
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -205,7 +203,6 @@ class DashboardScreen extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         setValue(2, context);
-                        MerchantScreenState().payWhat = "Pay Internet/Cable";
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -223,7 +220,6 @@ class DashboardScreen extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         setValue(3, context);
-                        MerchantScreenState().payWhat = "Pay Telecoms";
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
