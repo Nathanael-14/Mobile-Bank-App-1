@@ -5,6 +5,7 @@ import 'package:mobile_app/login_screen.dart';
 import 'login_screen.dart';
 import 'transfer_money_screen.dart';
 import 'total_balance.dart';
+import 'billing_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         canvasColor: Colors.white,
       ),
-      home: SplashScreen(),
+      home: DashboardScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

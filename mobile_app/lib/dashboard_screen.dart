@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/billing_screen.dart';
 import 'package:mobile_app/login_screen.dart';
+import 'package:mobile_app/merchants_screen.dart';
 import 'transfer_money_screen.dart';
 import 'total_balance.dart';
 
@@ -164,134 +166,210 @@ class DashboardScreen extends StatelessWidget {
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 1, name: 'Electricity'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(0, context);
+                        MerchantScreenState().payWhat = "Pay Electricity";
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 1, name: 'Electricity'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 2, name: 'Water'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(1, context);
+                        MerchantScreenState().payWhat = "Pay Water";
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 2, name: 'Water'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 3, name: 'Internet/Cable'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(2, context);
+                        MerchantScreenState().payWhat = "Pay Internet/Cable";
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 3, name: 'Internet/Cable'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 4, name: 'Telecoms'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(3, context);
+                        MerchantScreenState().payWhat = "Pay Telecoms";
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 4, name: 'Telecoms'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 5, name: 'Credit Card'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(4, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 5, name: 'Credit Card'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 6, name: 'Loan'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(5, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 6, name: 'Loan'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 7, name: 'Insurance'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(6, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 13, name: 'Government'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 8, name: 'Transportation'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(7, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 7, name: 'Insurance'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 9, name: 'Real Estate'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(8, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 8, name: 'Transportation'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 10, name: 'HealthCare'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(9, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 9, name: 'Real Estate'),
+                        ],
+                      ),
                     ),
                   ),
                   Card(
                     color: Colors.red.withOpacity(0.75),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        PayIcon(id: 11, name: 'School'),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        setValue(10, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 10, name: 'HealthCare'),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Card(
+                    color: Colors.red.withOpacity(0.75),
+                    child: InkWell(
+                      onTap: () {
+                        setValue(11, context);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          PayIcon(id: 11, name: 'School'),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -327,4 +405,11 @@ class PayIcon extends StatelessWidget {
       ],
     );
   }
+}
+
+void setValue(int value, BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => MerchantScreen(value)),
+  );
 }
