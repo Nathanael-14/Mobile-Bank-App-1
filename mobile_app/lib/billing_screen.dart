@@ -20,7 +20,7 @@ class BillingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text("Pay Bills"), //update this title
+          child: Text("Pay Bills"),
         ),
         backgroundColor: Colors.red,
         leading: Builder(
@@ -50,90 +50,6 @@ class BillingScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              /*    Container(
-                width: double.infinity,
-                child: Text(
-                  "Source",
-                  style: TextStyle(
-                    height: 3,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  ),
-                ),
-              ), */
-              /*  Container(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                width: double.infinity,
-                color: Colors.red,
-                child: Row(
-                  children: const <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: 16),
-                      child: Icon(
-                        Icons.account_balance_wallet,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 8),
-                      child: Text(
-                        'Savings Account',
-                        style: TextStyle(
-                          height: 3,
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 10, bottom: 10),
-                width: double.infinity,
-                color: Colors.red,
-                child: Text(
-                  '# ',
-                  style: TextStyle(
-                    height: 3,
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                width: double.infinity,
-                color: Colors.red,
-                child: Text(
-                  'Available Balance',
-                  style: TextStyle(
-                    height: 3,
-                    fontSize: 13,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.right,
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(right: 10, bottom: 5),
-                width: double.infinity,
-                color: Colors.red,
-                child: Text(
-                  '- PHP ',
-                  style: TextStyle(
-                    height: 3,
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.right,
-                ),
-              ), */
               Container(
                 width: double.infinity,
                 child: Text(
@@ -280,7 +196,6 @@ class BillingScreen extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => DashboardScreen()),
                           );
-                          //setValue(10, context);
                         },
                       ),
                     ),
@@ -317,8 +232,6 @@ class BillingScreen extends StatelessWidget {
                                 content: Text(
                                     'Oops.. Your Account Name is Incorrect')));
                           } else if (enterbillAmount.text.length > 0) {
-                            /* transferAmount =
-                                int.parse(SavingsAccount().sbillAmount); */
                             billAmount = int.parse(sbillAmount);
                           }
                           if (billAmount < 200) {

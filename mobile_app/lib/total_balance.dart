@@ -8,7 +8,6 @@ class SavingsAccount {
   String accountName = "VillaflorYap";
   calculateCurrentBalance() {
     totalBalance = totalBalance - transferAmount;
-    print(totalBalance);
   }
 }
 
